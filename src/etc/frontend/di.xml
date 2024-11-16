@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--suppress PluginDeclarationInspection -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\FrontControllerInterface">
+        <plugin name="front-controller-builtin-cache" sortOrder="100"/>
+        <plugin name="front-controller-varnish-cache" sortOrder="200"/>
+        <plugin name="front-controller-surrogate-key" sortOrder="300" type="Renttek\SurrogateKey\Plugin\Controller\Result\SetSurrogateKeyHeader"/>
+    </type>
+
+    <type name="Magento\Framework\Controller\ResultInterface">
+        <plugin name="result-builtin-cache" sortOrder="100"/>
+        <plugin name="result-varnish-cache" sortOrder="200"/>
+        <plugin name="result-surrogate-key" sortOrder="300" type="Renttek\SurrogateKey\Plugin\Controller\Result\SetSurrogateKeyHeader"/>
+    </type>
+</config>

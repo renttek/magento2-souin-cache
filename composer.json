@@ -1,0 +1,21 @@
+{
+    "name": "renttek/magento2-surrogate-key",
+    "type": "magento2-module",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Renttek\\SurrogateKey\\": "src/"
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Julian Nuß",
+            "email": "juliann@renttek.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

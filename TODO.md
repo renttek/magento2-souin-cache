@@ -1,0 +1,2 @@
+- add composer requirement
+- cache purge support
