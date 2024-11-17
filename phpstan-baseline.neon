@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(mixed\)\: mixed\)\|null, Closure\(array\{host\: string, port\?\: int, scheme\?\: string, api_basepath\?\: string, souin_api_basepath\?\: string\}\)\: Laminas\\Uri\\Uri given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Model/Server.php

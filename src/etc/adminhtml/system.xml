@@ -3,12 +3,11 @@
     <system>
         <section id="system">
             <group id="full_page_cache">
-                <group id="surrogate_key" translate="label" showInDefault="1" sortOrder="605">
-                    <label>Surrogate Key</label>
+                <group id="souin_cache" translate="label" showInDefault="1" sortOrder="605">
+                    <label>Souin Cache</label>
                     <field id="enabled" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                        <label>Use Surrogate-Key instead of X-Magento-Tags</label>
+                        <label>Enable Souin cache integration</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                        <comment><![CDATA[Caution: this will disable cache tags for varnish]]></comment>
                     </field>
                     <field id="keep_original_header" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                         <label>Keep the original X-Magento-Tags header</label>
@@ -16,7 +15,7 @@
                     </field>
                     <field id="key_list_style" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                         <label>Style of Keys in the header</label>
-                        <source_model>Renttek\SurrogateKey\Model\Config\Source\HeaderStyle</source_model>
+                        <source_model>Renttek\SouinCache\Model\Config\Source\HeaderStyle</source_model>
                         <comment><![CDATA[Souin = comma separated, Fastly = space separated]]></comment>
                     </field>
                     <depends>

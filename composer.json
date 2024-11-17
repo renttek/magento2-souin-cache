@@ -1,5 +1,5 @@
 {
-    "name": "renttek/magento2-surrogate-key",
+    "name": "renttek/magento2-souin-cache",
     "license": "MIT",
     "type": "magento2-module",
     "authors": [
@@ -11,7 +11,9 @@
     "require": {
         "php": ">=8.3",
         "mage-os/module-cache-invalidate": "^1.0",
-        "mage-os/module-page-cache": "^1.0"
+        "mage-os/module-page-cache": "^1.0",
+        "laminas/laminas-uri": "^2.12",
+        "beberlei/assert": "^3.3"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.44",
@@ -36,7 +38,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Renttek\\SurrogateKey\\": "src/"
+            "Renttek\\SouinCache\\": "src/"
         },
         "files": [
             "registration.php"

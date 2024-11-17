@@ -3,11 +3,11 @@
     <default>
         <system>
             <full_page_cache>
-                <surrogate_key>
+                <souin_cache>
                     <enabled>0</enabled>
                     <keep_original_header>0</keep_original_header>
                     <key_list_style>souin</key_list_style>
-                </surrogate_key>
+                </souin_cache>
             </full_page_cache>
         </system>
     </default>

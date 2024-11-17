@@ -4,12 +4,12 @@
     <type name="Magento\Framework\App\FrontControllerInterface">
         <plugin name="front-controller-builtin-cache" sortOrder="100"/>
         <plugin name="front-controller-varnish-cache" sortOrder="200"/>
-        <plugin name="front-controller-surrogate-key" sortOrder="300" type="Renttek\SurrogateKey\Plugin\Controller\Result\SetSurrogateKeyHeader"/>
+        <plugin name="front-controller-souin-cache" sortOrder="300" type="Renttek\SouinCache\Plugin\Controller\Result\SetSouinCacheHeader"/>
     </type>
 
     <type name="Magento\Framework\Controller\ResultInterface">
         <plugin name="result-builtin-cache" sortOrder="100"/>
         <plugin name="result-varnish-cache" sortOrder="200"/>
-        <plugin name="result-surrogate-key" sortOrder="300" type="Renttek\SurrogateKey\Plugin\Controller\Result\SetSurrogateKeyHeader"/>
+        <plugin name="result-souin-cache" sortOrder="300" type="Renttek\SouinCache\Plugin\Controller\Result\SetSouinCacheHeader"/>
     </type>
 </config>

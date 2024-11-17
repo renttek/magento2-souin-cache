@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Renttek\SurrogateKey\Plugin\Controller\Result;
+namespace Renttek\SouinCache\Plugin\Controller\Result;
 
 use Laminas\Http\Header\HeaderInterface;
 use Magento\Framework\App\Response\Http as ResponseHttp;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\PageCache\Model\Config as PageCacheConfig;
-use Renttek\SurrogateKey\Model\Config;
+use Renttek\SouinCache\Model\Config;
 
-class SetSurrogateKeyHeader
+class SetSouinCacheHeader
 {
     public function __construct(
         private PageCacheConfig $pageCacheConfig,

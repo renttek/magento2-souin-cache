@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Renttek\SurrogateKey\Model\Config\Source;
+namespace Renttek\SouinCache\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
