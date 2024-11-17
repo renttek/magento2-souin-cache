@@ -4,3 +4,4 @@
   - Add Prometheus data
 - create setup with caddy& souin
   - test and pray
+- Document configuration (env.php)
