@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
+/** @noinspection PhpUnhandledExceptionInspection */
 return ECSConfig::configure()
                 ->withPaths([__DIR__ . '/src'])
                 ->withPreparedSets(
@@ -27,5 +27,10 @@ return ECSConfig::configure()
                         \PhpCsFixer\Fixer\Basic\BracesPositionFixer::class,
                         \PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer::class,
                         \PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer::class,
+                        \PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer::class,
+                        \Symplify\CodingStandard\Fixer\Spacing\MethodChainingNewlineFixer::class,
+                        \Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer::class,
+                        \PhpCsFixer\Fixer\CastNotation\CastSpacesFixer::class,
+                        \PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class,
                     ],
                 );

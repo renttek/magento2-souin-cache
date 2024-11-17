@@ -13,7 +13,8 @@
         "mage-os/module-cache-invalidate": "^1.0",
         "mage-os/module-page-cache": "^1.0",
         "laminas/laminas-uri": "^2.12",
-        "beberlei/assert": "^3.3"
+        "beberlei/assert": "^3.3",
+        "azjezz/psl": "^3.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.44",

@@ -1,1 +1,6 @@
-- cache purge support
+- Add Logging
+- Get keys / Surrogate keys from souin
+  - Display in Backend (Dashboard)
+  - Add Prometheus data
+- create setup with caddy& souin
+  - test and pray
