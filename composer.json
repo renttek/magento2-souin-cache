@@ -1,7 +1,39 @@
 {
     "name": "renttek/magento2-surrogate-key",
-    "type": "magento2-module",
     "license": "MIT",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Julian Nuß",
+            "email": "juliann@renttek.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "mage-os/module-cache-invalidate": "^1.0",
+        "mage-os/module-page-cache": "^1.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.44",
+        "roave/security-advisories": "dev-latest",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "symplify/easy-coding-standard": "^12.3"
+    },
+    "repositories": {
+        "mage-os": {
+            "type": "composer",
+            "url": "https://repo.mage-os.org/",
+            "only": [
+                "mage-os/*",
+                "magento/*"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Renttek\\SurrogateKey\\": "src/"
@@ -10,12 +42,11 @@
             "registration.php"
         ]
     },
-    "authors": [
-        {
-            "name": "Julian Nuß",
-            "email": "juliann@renttek.de"
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "mage-os/composer-dependency-version-audit-plugin": false,
+            "phpstan/extension-installer": true
         }
-    ],
-    "minimum-stability": "stable",
-    "require": {}
+    }
 }

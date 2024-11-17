@@ -5,40 +5,53 @@ declare(strict_types=1);
 namespace Renttek\SurrogateKey\Plugin\Controller\Result;
 
 use Laminas\Http\Header\HeaderInterface;
-use Magento\PageCache\Model\Config as PageCacheConfig;
 use Magento\Framework\App\Response\Http as ResponseHttp;
 use Magento\Framework\Controller\ResultInterface;
+use Magento\PageCache\Model\Config as PageCacheConfig;
 use Renttek\SurrogateKey\Model\Config;
 
 class SetSurrogateKeyHeader
 {
     public function __construct(
         private PageCacheConfig $pageCacheConfig,
-        private Config $config,
-    ) {
-    }
+        private Config          $config,
+    ) {}
 
-    /**
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     */
     public function afterRenderResult(
         ResultInterface $subject,
         ResultInterface $result,
-        ResponseHttp $response
+        ResponseHttp    $response,
     ): ResultInterface {
         if (!$this->isEnabled()) {
             return $result;
         }
 
-        $cacheTagsHeader = $response->getHeader('X-Magento-Tags');
-        if (!$cacheTagsHeader instanceof HeaderInterface) {
+        $cacheKeys = $this->getKeys($response);
+        if ($cacheKeys === null) {
             return $result;
         }
 
-        $response->setHeader('Surrogate-Key', $cacheTagsHeader->getFieldValue());
-        $response->clearHeader('X-Magento-Tags');
+        $response->setHeader('Surrogate-Key', $cacheKeys);
+
+        if (!$this->config->shouldKeepOriginalHeader()) {
+            $response->clearHeader('X-Magento-Tags');
+        }
 
         return $result;
+    }
+
+    private function getKeys(ResponseHttp $response): ?string
+    {
+        $cacheTagsHeader = $response->getHeader('X-Magento-Tags');
+        if (!$cacheTagsHeader instanceof HeaderInterface) {
+            return null;
+        }
+
+        $cacheTags = $cacheTagsHeader->getFieldValue();
+
+        return $this->config->getKeyListStyle() === Config\Source\HeaderStyle::TYPE_FASTLY
+            ? implode(' ', explode(',', $cacheTags))
+            : $cacheTags;
     }
 
     private function isEnabled(): bool
